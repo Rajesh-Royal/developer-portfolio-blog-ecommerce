@@ -3,5 +3,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.fixAll.eslint": true
-  }
+  },
+  "editor.wordWrap": "on"
 }

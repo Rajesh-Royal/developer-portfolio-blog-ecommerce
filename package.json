@@ -1,0 +1,51 @@
+{
+  "name": "developer-portfolio-blog-ecommerce",
+  "private": true,
+  "description": "Kick off Developer portfolio, blog, ecommerce store built with gatsby along with @material-ui, strapi, react-helmet. Hosted on netlify",
+  "version": "0.1.0",
+  "author": "Rajesh Royal <rajeshroyal896@gmail.com>",
+  "dependencies": {
+    "ansi-regex": "^5.0.0",
+    "gatsby": "^2.24.63",
+    "gatsby-image": "^2.4.19",
+    "gatsby-plugin-manifest": "^2.4.30",
+    "gatsby-plugin-offline": "^3.2.28",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-react-helmet": "^3.3.11",
+    "gatsby-plugin-sharp": "^2.6.36",
+    "gatsby-source-filesystem": "^2.3.30",
+    "gatsby-transformer-sharp": "^2.5.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "prettier": "2.1.1"
+  },
+  "keywords": [
+    "gatsby",
+    "developer",
+    "portfolio",
+    "blog",
+    "ecommerce"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce"
+  },
+  "bugs": {
+    "url": "https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/issues"
+  }
+}

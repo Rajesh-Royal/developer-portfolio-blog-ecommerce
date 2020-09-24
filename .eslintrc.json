@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "semi": "error",
+    "quotes": ["error", "double"],
+    "no-duplicate-imports": "error"
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2015
+  },
+  "parser": "babel-eslint"
+}

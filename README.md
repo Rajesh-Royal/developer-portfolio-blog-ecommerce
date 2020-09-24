@@ -12,6 +12,8 @@ Kick-off Developer portfolio, blog, eCommerce store built with Gatsby along with
 
 _Have another more specific idea? You may Create a feature request [Request a feature](https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/issues/new?assignees=Rajesh-Royal&labels=enhancement&template=feature_request.md&title=)._
 
+## ⚠ you should use develop branch for latest codebase.
+
 ## 🚀 Quick start
 
 1.  **Setup local developement**

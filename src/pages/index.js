@@ -1,13 +1,27 @@
 import React from "react";
+import { ThemeProvider } from "@material-ui/styles";
+import Theme from "../theme/theme";
 
-import Layout from "../components/global/layout";
-import SEO from "../components/global/seo";
+import Layout from "../components/global/layouts/layout";
+import SEO from "../components/global/seo/seo";
+import Header from "../components/Header/header";
+import Hero from "../components/Hero/hero";
+import Footer from "../components/Footer/footer";
+
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Home page</h1>
-  </Layout>
+  <ThemeProvider theme={Theme}>
+    <Layout>
+      <div className="main">
+        <SEO title="Home" />
+        <Header />
+        <section className="content-container">
+          <Hero />
+          <Footer />
+        </section>
+      </div>
+    </Layout>
+  </ThemeProvider>
 );
 
 export default IndexPage;

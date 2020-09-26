@@ -54,7 +54,7 @@ const Header = () => {
                         <Link to="/blog">Blog</Link>
                         <Link to="/about">About</Link>
                         <Link to="/contact">Contact</Link>
-                        <Link to="/resume">Resume</Link>
+                        <Link to="/">Resume</Link>
                     </Typography>
                     <IconButton aria-label="light/dark theme switch" color="inherit" onClick={() => window.open("https://github.com/Rajesh-Royal", "_blank")}>
                         <GitHubIcon />

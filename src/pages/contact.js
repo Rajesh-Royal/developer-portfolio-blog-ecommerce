@@ -14,6 +14,7 @@ const contact = () => {
                 <div className="main">
                     <SEO title="Home" />
                     <Header />
+                    <section className="content-container"></section>
                     <Footer />
                 </div>
             </Layout>

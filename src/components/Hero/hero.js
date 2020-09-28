@@ -23,7 +23,7 @@ const Hero = () => {
         <section className="Hero-section">
             <Container maxWidth="lg">
                 <Box my={6}>
-                    <Grid spacing={3}>
+                    <Grid spacing={3} container>
                         <Grid component="div" item sm={12}>
                             <Typography variant="h4" color="textPrimary" align="center" className={classes.title}>
                                 Hi there, 👋 My Name is Rajesh. Frontend-Engineer from India😉.

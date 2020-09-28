@@ -1,7 +1,23 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const path = require("path");
 
-// You can delete this file if you're not using it
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+  return graphql(`
+    {
+      allWordpressPost(sort: {fields: [date]}) {
+        edges {
+          node {
+            title
+            excerpt
+            slug
+            date(formatString: "MM-DD-YYYY")
+            author {
+              name
+            }
+          }
+        }
+      }
+    }
+
+  `);
+};

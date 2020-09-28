@@ -7,6 +7,7 @@ import SEO from "../components/global/seo/seo";
 import Header from "../components/Header/header";
 import Hero from "../components/Hero/hero";
 import Footer from "../components/Footer/footer";
+import Blog from "../components/blog/blog";
 
 
 const IndexPage = () => (
@@ -17,6 +18,7 @@ const IndexPage = () => (
         <Header />
         <section className="content-container">
           <Hero />
+          <Blog />
           <Footer />
         </section>
       </div>

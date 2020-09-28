@@ -11,6 +11,10 @@ body {
   height: calc(100vh - 52px);
 }
 
+.divider {
+  max-width: 100px;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;

@@ -22,9 +22,9 @@ const Footer = () => {
         <footer className={classes.footer}>
             <Typography variant="body2" color="textPrimary" align="center">
                 {"Copyright © "}
-                <Link color="inherit" href="https://material-ui.com/">
+                <a color="inherit" href="https://rajeshroyal.com/" target="_blank">
                     Rajesh Royal
-                </Link>{" "}
+                </a>{" "}
                 {new Date().getFullYear()}
                 {"."}
             </Typography>

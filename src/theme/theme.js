@@ -26,6 +26,7 @@ const Theme = createMuiTheme({
         secondary: {
             // This is green.A700 as hex.
             main: "#4e5d6c",
+            dark: "#2b3e50",
             light: "#ebebeb",
         },
         error: {

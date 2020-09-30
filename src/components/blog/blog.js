@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
-import { Typography, Container, Box, Grid, Divider, makeStyles, Card, CardActions, CardContent, Button, CardActionArea, CardMedia, Chip, Paper } from "@material-ui/core";
+import { Typography, Container, Box, Grid, Divider, makeStyles, Card, CardActions, CardContent, CardActionArea, CardMedia, Chip } from "@material-ui/core";
 
 const Blog = ({ data }) => {
     const useStyles = makeStyles((theme) => ({

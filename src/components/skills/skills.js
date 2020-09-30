@@ -1,9 +1,7 @@
 import * as React from "react";
-import { graphql, Link, StaticQuery } from "gatsby";
-import { Typography, Container, Box, Grid, Divider, makeStyles, Card, CardActions, CardContent, Button, CardActionArea, CardMedia, Chip, Paper } from "@material-ui/core";
-import { FaHtml5, FaCss3, FaJs } from "react-icons/fa";
+import { Typography, Container, Box, Grid, Divider, makeStyles, Card, CardActions, Chip } from "@material-ui/core";
 
-const Skills = ({ data }) => {
+const Skills = () => {
     const useStyles = makeStyles((theme) => ({
         divider: {
             maxWidth: "150px",

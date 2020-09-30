@@ -25,11 +25,10 @@ exports.createPages = ({ graphql, actions }) => {
         // Decide URL structure
         path: node.slug,
         // path to template
-        component: path.resolve("./src/pages/blog.js"),
+        component: path.resolve("./src/templates/blog.js"),
         context: {
-          // This is the $slug variable
-          // passed to blog-post.js
           slug: node.slug,
+          $slug: node.slug
         },
       });
     });

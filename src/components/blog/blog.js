@@ -91,13 +91,4 @@ const Blog = ({ data }) => {
 
     );
 };
-// export const query = graphql`
-//   query BlogQuery {
-//     site {
-//       siteMetadata {
-//         description
-//       }
-//     }
-//   }
-// `;
 export default Blog;

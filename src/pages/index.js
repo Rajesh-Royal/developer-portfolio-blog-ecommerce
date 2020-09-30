@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider } from "@material-ui/styles";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 import Theme from "../theme/theme";
 
 import Layout from "../components/global/layouts/layout";
@@ -8,10 +8,11 @@ import Header from "../components/Header/header";
 import Hero from "../components/Hero/hero";
 import Footer from "../components/Footer/footer";
 import Blog from "../components/blog/blog";
+import Skills from "../components/skills/skills";
 
 
 const IndexPage = () => (
-  <ThemeProvider theme={Theme}>
+  <MuiThemeProvider theme={Theme}>
     <Layout>
       <div className="main">
         <SEO title="Home" />
@@ -19,11 +20,12 @@ const IndexPage = () => (
         <section className="content-container">
           <Hero />
           <Blog />
+          <Skills />
           <Footer />
         </section>
       </div>
     </Layout>
-  </ThemeProvider>
+  </MuiThemeProvider>
 );
 
 export default IndexPage;

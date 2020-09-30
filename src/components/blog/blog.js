@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, Link, StaticQuery } from "gatsby";
 import { Typography, Container, Box, Grid, Divider, makeStyles, Card, CardActions, CardContent, Button, CardActionArea, CardMedia, Chip, Paper } from "@material-ui/core";
 
 const Blog = ({ data }) => {
@@ -9,7 +9,10 @@ const Blog = ({ data }) => {
             margin: "1rem auto"
         },
         card: {
-            background: theme.palette.secondary.main
+            background: theme.palette.secondary.main,
+            "& a": {
+                textDecoration: "none",
+            }
         },
         chip: {
             background: theme.palette.secondary.main,
@@ -24,13 +27,14 @@ const Blog = ({ data }) => {
         <StaticQuery
             query={graphql`
         query HeadingQuery {
-            allWordpressPost (limit: 6){
+            allWordpressPost (limit: 3){
                 edges {
                 node {
                     title
                     excerpt
                     x_featured_media_medium
                     date
+                    slug
                 }
                 }
             }
@@ -40,7 +44,7 @@ const Blog = ({ data }) => {
 
                 < section className="blog-section">
                     <Container maxWidth="lg">
-                        <Box my={8}>
+                        <Box mt={8}>
                             <Grid spacing={3} container>
                                 <Grid component="div" item sm={12}>
                                     <Typography variant="h4" color="textPrimary" align="center">
@@ -56,24 +60,26 @@ const Blog = ({ data }) => {
                                 {data.allWordpressPost.edges.map(({ node }, index) => (
                                     <Grid item xs={12} sm={6} lg={4} key={index}>
                                         <Card className={classes.card}>
-                                            <CardActionArea bgcolor="primary">
-                                                <CardMedia
-                                                    component="img"
-                                                    alt="Contemplative Reptile"
-                                                    height="180"
-                                                    image={node.x_featured_media_medium}
-                                                    title="Contemplative Reptile"
-                                                />
-                                                <CardContent>
-                                                    <Typography gutterBottom variant="h5" component="h4" color="textPrimary">
-                                                        Lizard
-                                            </Typography>
-                                                    <Typography variant="body2" color="textPrimary" component="p">
-                                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                                        across all continents except Antarctica
-                                        </Typography>
-                                                </CardContent>
-                                            </CardActionArea>
+                                            <Link to={node.slug}>
+                                                <CardActionArea bgcolor="primary">
+                                                    <CardMedia
+                                                        component="img"
+                                                        alt="Contemplative Reptile"
+                                                        height="180"
+                                                        image={node.x_featured_media_medium}
+                                                        title="Contemplative Reptile"
+                                                    />
+                                                    <CardContent>
+                                                        <Typography gutterBottom variant="h5" component="h4" color="textPrimary"
+                                                            dangerouslySetInnerHTML={{ __html: node.title.slice(0, 55) + "..." }}>
+
+                                                        </Typography>
+                                                        <Typography variant="body2" color="textPrimary" component="p"
+                                                            dangerouslySetInnerHTML={{ __html: node.excerpt.slice(0, 140) }}>
+                                                        </Typography>
+                                                    </CardContent>
+                                                </CardActionArea>
+                                            </Link>
                                             <CardActions className={classes.chip}>
                                                 <Chip size="small" label="First" />
                                                 <Chip size="small" label="Second" />

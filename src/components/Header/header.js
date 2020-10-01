@@ -9,6 +9,9 @@ import { Link } from "gatsby";
 const Header = () => {
 
     const useStyles = makeStyles((theme) => ({
+        toolbar: {
+            flexWrap: "wrap !important"
+        },
         background: {
             background: theme.palette.secondary.main
         },
@@ -43,9 +46,9 @@ const Header = () => {
     };
     return (
         <AppBar position="relative" className={classes.background}>
-            <Toolbar>
+            <Toolbar class={classes.toolbar}>
                 <div className={classes.title}>
-                    <Typography variant="h6" color="inherit" noWrap>
+                    <Typography variant="h6" color="inherit" noWrap align="center">
                         <Link to="/">Rajesh Royal</Link>
                     </Typography>
                 </div>

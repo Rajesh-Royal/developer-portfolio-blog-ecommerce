@@ -41,4 +41,10 @@ body {
   .blog-article .MuiGrid-container {
     display: block !important;
   }
+  .blog-article .MuiTypography-h2 {
+    font-size: 2.75rem;
+  }
+  .Hero-section .MuiTypography-h4 {
+    font-size: 2rem;
+  }
 }

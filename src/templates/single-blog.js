@@ -1,9 +1,14 @@
 import React from "react";
 import { Container, Box, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 export const SingleBlog = ({ post }) => {
+    const matches = useMediaQuery(theme => theme.breakpoints.up("sm"));
     const useStyles = makeStyles((theme) => ({
+        ".MuiGrid-container": {
+            display: matches ? "block" : "flex"
+        },
         featured: {
             width: "100%"
         },
@@ -58,7 +63,8 @@ export const SingleBlog = ({ post }) => {
             },
             "& img": {
                 maxWidth: 768,
-                height: "auto"
+                height: "auto",
+                width: "100% !important"
             }
         }
     }));

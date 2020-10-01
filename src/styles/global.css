@@ -36,3 +36,9 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+@media (max-width: 600px) {
+  .blog-article .MuiGrid-container {
+    display: block !important;
+  }
+}

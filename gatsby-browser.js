@@ -1,10 +1,8 @@
 import React from "react";
-import { MuiThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 import "./src/styles/global.css";
 import RootLayout from "./src/components/global/layouts/RootLayout";
-
-import { createMuiTheme } from "@material-ui/core/styles";
 
 const Theme = createMuiTheme({
     typography: {
@@ -61,10 +59,10 @@ const Theme = createMuiTheme({
 
 export const wrapRootElement = ({ element }) => {
     return (
-        <MuiThemeProvider theme={Theme}>
+        <ThemeProvider theme={Theme}>
             <RootLayout>
                 {element}
             </RootLayout>
-        </MuiThemeProvider>
+        </ThemeProvider >
     );
 };

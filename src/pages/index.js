@@ -1,6 +1,4 @@
 import React from "react";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import Theme from "../theme/theme";
 
 import Layout from "../components/global/layouts/layout";
 import SEO from "../components/global/seo/seo";
@@ -12,20 +10,18 @@ import Skills from "../components/skills/skills";
 
 
 const IndexPage = () => (
-  <MuiThemeProvider theme={Theme}>
-    <Layout>
-      <div className="main">
-        <SEO title="Home" />
-        <Header />
-        <section className="content-container">
-          <Hero />
-          <Blog />
-          <Skills />
-          <Footer />
-        </section>
-      </div>
-    </Layout>
-  </MuiThemeProvider>
+  <Layout>
+    <div className="main">
+      <SEO title="Home" />
+      <Header />
+      <section className="content-container">
+        <Hero />
+        <Blog />
+        <Skills />
+        <Footer />
+      </section>
+    </div>
+  </Layout>
 );
 
 export default IndexPage;

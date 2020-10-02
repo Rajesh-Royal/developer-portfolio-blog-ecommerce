@@ -1,12 +1,10 @@
 import React from "react";
 import { Container, Box, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import "./templates.module.css";
 
 export const SingleBlog = ({ post }) => {
-    const matches = useMediaQuery(theme => theme.breakpoints.up("sm"));
     const useStyles = makeStyles((theme) => ({
         featured: {
             width: "100%"

@@ -1,7 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { ThemeProvider } from "@material-ui/styles";
-import Theme from "../theme/theme";
 
 import Layout from "../components/global/layouts/layout";
 import SEO from "../components/global/seo/seo";
@@ -10,23 +8,21 @@ import Footer from "../components/Footer/footer";
 import SingleBlog from "./single-blog";
 
 const blog = ({ data }) => {
-    const post = data.allWordpressPost.edges[0].node;
+  const post = data.allWordpressPost.edges[0].node;
+  return (
+    <Layout>
+      <SEO title={post.title} />
+      <Header />
+      <div className="main">
+        <section className="content-container">
+          <SingleBlog post={post} />
+          <Footer />
+        </section>
+      </div>
 
-    return (
-        <ThemeProvider theme={Theme}>
-            <Layout>
-                <SEO title={post.title} />
-                <Header />
-                <div className="main">
-                    <section className="content-container">
-                        <SingleBlog post={post} />
-                        <Footer />
-                    </section>
-                </div>
+    </Layout>
 
-            </Layout>
-        </ThemeProvider>
-    );
+  );
 };
 
 export const query = graphql`

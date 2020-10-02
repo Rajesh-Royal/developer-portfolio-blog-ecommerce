@@ -1,4 +1,70 @@
 import React from "react";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+
 import "./src/styles/global.css";
 import RootLayout from "./src/components/global/layouts/RootLayout";
-export const wrapRootElement = ({ element }) => <RootLayout>{element}</RootLayout>;
+
+import { createMuiTheme } from "@material-ui/core/styles";
+
+const Theme = createMuiTheme({
+    typography: {
+        fontFamily: [
+            "Roboto",
+            "Lato",
+            "-apple-system",
+            "BlinkMacSystemFont",
+            "\"Segoe UI\"",
+            "\"Helvetica Neue\"",
+            "Arial",
+            "sans-serif",
+            "\"Apple Color Emoji\"",
+            "\"Segoe UI Emoji\"",
+            "\"Segoe UI Symbol\"",
+        ].join(","),
+        color: "#ebebeb",
+    },
+    palette: {
+        type: "dark",
+        primary: {
+            // Purple and green play nicely together.
+            main: "#df691a",
+        },
+        secondary: {
+            // This is green.A700 as hex.
+            main: "#4e5d6c",
+            dark: "#2b3e50",
+            light: "#ebebeb",
+        },
+        error: {
+            // This is green.A700 as hex.
+            main: "#d9534f",
+        },
+        warning: {
+            // This is green.A700 as hex.
+            main: "#f0ad4e",
+        },
+        info: {
+            // This is green.A700 as hex.
+            main: "#5bc0de",
+        },
+        success: {
+            // This is green.A700 as hex.
+            main: "#5cb85c",
+        },
+        text: {
+            primary: "#ebebeb",
+            secondary: "#4e5d6c",
+            disabled: "#adb5bd"
+        }
+    },
+});
+
+export const wrapRootElement = ({ element }) => {
+    return (
+        <MuiThemeProvider theme={Theme}>
+            <RootLayout>
+                {element}
+            </RootLayout>
+        </MuiThemeProvider>
+    );
+};

@@ -48,3 +48,12 @@ body {
     font-size: 2rem;
   }
 }
+@media (max-width: 768px) {
+  .header-toolbar {
+    flex-wrap: wrap !important;
+    justify-content: center;
+  }
+  .align-center {
+    text-align: center;
+  }
+}

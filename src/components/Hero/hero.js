@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Typography, Button, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import { Link } from "gatsby";
 
 import RajeshImage from "../../images/rajesh-royal-vector-illustrator.png";
 
@@ -35,13 +36,15 @@ const Hero = () => {
                             <Typography align="center" className={classes.image}>
                                 <img width="250" src={RajeshImage} alt="Rajesh royal vector illustrator" />
                             </Typography>
-                            <Typography variant="button" color="textPrimary" align="center" className={classes.button}>
-                                <Box mt={3}>
-                                    <Button variant="contained" color="primary" size="large">
-                                        Say Hello 👋
-                                </Button>
-                                </Box>
-                            </Typography>
+                            <Link to="/contact" target="_blank">
+                                <Typography variant="button" color="textPrimary" align="center" className={classes.button}>
+                                    <Box mt={3}>
+                                        <Button variant="contained" color="primary" size="large">
+                                            Say Hello 👋
+                                    </Button>
+                                    </Box>
+                                </Typography>
+                            </Link>
                         </Grid>
                     </Grid>
                 </Box>

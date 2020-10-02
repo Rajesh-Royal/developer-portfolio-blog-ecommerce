@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
+import { lightTheme, darkTheme } from "../theme/theme";
+import { ThemeProvider } from "@material-ui/core/styles";
 
 import Layout from "../components/global/layouts/layout";
 import SEO from "../components/global/seo/seo";
@@ -9,19 +11,28 @@ import SingleBlog from "./single-blog";
 
 const blog = ({ data }) => {
   const post = data.allWordpressPost.edges[0].node;
+  const [themeType, setThemeType] = useState("dark");
+  const handleClick = () => {
+    if (themeType === "dark") {
+      setThemeType("light");
+    } else {
+      setThemeType("dark");
+    }
+  };
   return (
-    <Layout>
-      <SEO title={post.title} />
-      <Header />
-      <div className="main">
-        <section className="content-container">
-          <SingleBlog post={post} />
-          <Footer />
-        </section>
-      </div>
+    <ThemeProvider theme={themeType == "dark" ? darkTheme : lightTheme}>
+      <Layout>
+        <SEO title={post.title} />
+        <Header handleClick={handleClick} themeType={themeType} />
+        <div className="main">
+          <section className="content-container">
+            <SingleBlog post={post} />
+            <Footer />
+          </section>
+        </div>
 
-    </Layout>
-
+      </Layout>
+    </ThemeProvider>
   );
 };
 

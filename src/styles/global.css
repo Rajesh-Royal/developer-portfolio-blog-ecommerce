@@ -16,7 +16,9 @@ body {
 .divider {
   max-width: 100px;
 }
-
+figure {
+  width: auto !important;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;

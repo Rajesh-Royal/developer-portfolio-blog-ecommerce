@@ -59,6 +59,9 @@ export const SingleBlog = ({ post }) => {
             "& img": {
                 maxWidth: 768,
                 height: "auto"
+            },
+            "& figure": {
+                width: "auto !important",
             }
         }
     }));

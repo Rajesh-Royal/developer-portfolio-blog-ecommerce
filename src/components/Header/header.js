@@ -6,8 +6,8 @@ import Brightness6Icon from "@material-ui/icons/Brightness6";
 import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { Link } from "gatsby";
-const Header = () => {
 
+const Header = (props) => {
     const useStyles = makeStyles((theme) => ({
         background: {
             background: theme.palette.secondary.main
@@ -33,14 +33,6 @@ const Header = () => {
         }
     }));
     const classes = useStyles();
-    const [themeType, setThemeType] = useState("dark");
-    const handleClick = () => {
-        if (themeType === "dark") {
-            setThemeType("light");
-        } else {
-            setThemeType("dark");
-        }
-    };
     return (
         <AppBar position="relative" className={classes.background}>
             <Toolbar className="header-toolbar">
@@ -56,12 +48,16 @@ const Header = () => {
                         <Link to="/contact">Contact</Link>
                         <Link to="/">Resume</Link>
                     </Typography>
-                    <IconButton aria-label="light/dark theme switch" color="inherit" onClick={() => window.open("https://github.com/Rajesh-Royal", "_blank")}>
+                    <IconButton aria-label="light/dark theme switch" color="default" onClick={() => window.open("https://github.com/Rajesh-Royal", "_blank")}>
                         <GitHubIcon />
                     </IconButton>
-                    <IconButton aria-label="light/dark theme switch" color="inherit" onClick={handleClick}>
-                        {themeType === "dark" ? <BrightnessHighIcon /> : <Brightness6Icon />}
+                    <IconButton aria-label="light/dark theme switch" color="default" onClick={props.handleClick}>
+                        {props.themeType === "dark" ? <BrightnessHighIcon /> : <Brightness6Icon />}
                     </IconButton>
+                    <style dangerouslySetInnerHTML={{
+                        __html: `
+                        body { background: ${props.themeType == "light" ? "white" : "#2b3e50"} }
+                    `}} />
 
                 </nav>
             </Toolbar>

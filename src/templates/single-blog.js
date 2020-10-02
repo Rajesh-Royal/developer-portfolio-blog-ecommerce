@@ -26,6 +26,7 @@ export const SingleBlog = ({ post }) => {
         },
         body: {
             marginTop: theme.spacing(6),
+            color: theme.palette.text.primary,
             "& a": {
                 color: theme.palette.info.main,
                 textDecoration: "none"

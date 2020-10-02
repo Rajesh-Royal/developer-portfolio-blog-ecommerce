@@ -18,7 +18,7 @@ export const SingleBlog = ({ post }) => {
         },
         avatar: {
             borderRadius: "50%",
-            border: "1px solid whitesmoke",
+            border: `1px solid ${theme.palette.primary.main}`,
             marginRight: theme.spacing(1),
             marginBottom: theme.spacing(-1)
         },
@@ -50,7 +50,7 @@ export const SingleBlog = ({ post }) => {
                 background: theme.palette.secondary.main,
                 padding: theme.spacing(1),
                 maxWidth: "fit-content",
-                border: "1px dashed whitesmoke",
+                borderLeft: `1px solid ${theme.palette.info.main}`,
                 "& p": {
                     margin: theme.spacing(0),
                     minWidth: "fit-content",
@@ -60,9 +60,6 @@ export const SingleBlog = ({ post }) => {
                 maxWidth: 768,
                 height: "auto"
             },
-            "& figure": {
-                width: "auto !important",
-            }
         }
     }));
     const classes = useStyles();

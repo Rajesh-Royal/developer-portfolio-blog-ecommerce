@@ -19,6 +19,9 @@ body {
 figure {
   width: auto !important;
 }
+blockquote {
+  border-left: 1px solid #5bc0de;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;

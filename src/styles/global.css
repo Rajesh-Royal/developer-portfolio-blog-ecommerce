@@ -4,13 +4,14 @@ body {
   padding: 0;
   background-color: #2b3e50;
   color: whitesmoke;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .content-container {
-  overflow: scroll;
-  height: calc(100vh - 65px);
-  overflow-x: hidden;
+  padding-top: 20px;
+}
+#header {
+  position: fixed;
 }
 
 .divider {

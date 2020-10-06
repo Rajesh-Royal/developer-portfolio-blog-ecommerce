@@ -1,7 +1,8 @@
 const path = require("path");
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+
   return graphql(`
     {
       allWordpressPost(sort: {fields: [date]}) {
@@ -20,7 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
   `).then(result => {
-    result.data.allWordpressPost.edges.forEach(({ node }) => {
+    result.data.allWordpressPost.edges.forEach(({ node }, index) => {
       createPage({
         // Decide URL structure
         path: node.slug,
@@ -28,7 +29,9 @@ exports.createPages = ({ graphql, actions }) => {
         component: path.resolve("./src/templates/blog.js"),
         context: {
           slug: node.slug,
-          $slug: node.slug
+          $slug: node.slug,
+          prev: index === 0 ? null : result.data.allWordpressPost.edges[index - 1].node,
+          next: index === (result.data.allWordpressPost.edges.length - 1) ? null : result.data.allWordpressPost.edges[index + 1].node
         },
       });
     });

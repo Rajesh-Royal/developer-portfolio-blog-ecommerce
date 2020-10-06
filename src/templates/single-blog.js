@@ -1,10 +1,14 @@
 import React from "react";
 import { Container, Box, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import parse from "html-react-parser";
+import { PostImage } from "../components/WP-image-optimize/PostImage";
+import Img from "gatsby-image";
+import { Link } from "gatsby";
 
 import "./templates.module.css";
 
-export const SingleBlog = ({ post }) => {
+export const SingleBlog = ({ post, pageContext }) => {
     const useStyles = makeStyles((theme) => ({
         featured: {
             width: "100%"
@@ -63,17 +67,53 @@ export const SingleBlog = ({ post }) => {
                 maxWidth: 768,
                 height: "auto",
                 width: "100% !important"
-            }
+            },
+        },
+        navigation: {
+            display: "flex",
+            justifyContent: "space-between",
+            marginTop: theme.spacing(8),
+            fontSize: 20,
+            "& a": {
+                color: theme.palette.info.main,
+                textDecoration: "none"
+            },
         }
     }));
     const classes = useStyles();
+    const getImage = node => {
+        if (node.name === "img") {
+            return node;
+        } else if (node.children != null) {
+            for (let index = 0; index < node.children.length; index++) {
+                let image = getImage(node.children[index]);
+                if (image != null) return image;
+            }
+        }
+    };
+
+    const replaceMedia = node => {
+        if (node.name === "p") {
+            const image = getImage(node);
+            if (image != null) {
+                return <PostImage src={image.attribs.src} alt={image.attribs.alt} width={image.attribs.width} />;
+            }
+        }
+    };
+
+
     return (
         <article className="blog-article">
             <Container maxWidth="md">
                 <Box my={6}>
                     <Grid spacing={3} container>
                         <Grid component="div" item sm={12}>
-                            <img src={post.featured_media.localFile.url} className={classes.featured} alt="post-featured-media" srcSet="" />
+                            {/* using gatsby optimized image */}
+                            <Img
+                                fluid={post.featured_media.localFile.childImageSharp.fluid}
+                                alt="post-featured-media"
+                                className={classes.featured}
+                            />
                             <Typography variant="h2" color="textPrimary" dangerouslySetInnerHTML={{ __html: post.title }}>
                             </Typography>
                             <Typography variant="body1" component="div" color="primary">
@@ -86,8 +126,20 @@ export const SingleBlog = ({ post }) => {
                                 </p>
 
                             </Typography>
-                            <Typography variant="body2" component="div" color="initial" className={classes.body} dangerouslySetInnerHTML={{ __html: post.content }}>
+                            <Typography variant="body2" component="div" color="initial" className={classes.body}>
+                                {/* optimizing all the images inside post body with gatsby transformer */}
+                                {parse(post.content, { replace: replaceMedia })}
                             </Typography>
+                            <Typography variant="body2" component="p" className={classes.navigation} align="right">
+                                {pageContext.prev ?
+                                    <Link to={`/${pageContext.prev.slug}`}> {"<"} PrevPost </Link> : ""
+                                }
+                                {pageContext.next ?
+                                    <Link to={`/${pageContext.next.slug}`}> NextPost {">"} </Link> : ""
+                                }
+
+                            </Typography>
+
                         </Grid>
                     </Grid>
                 </Box>

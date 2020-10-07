@@ -5,7 +5,7 @@ module.exports = {
     url: "https://developer-blog-ecommerce-gatsby.netlify.app/",
     legalName: "Rajesh Royal",
     defaultDescription:
-        "I'm Rajesh Royal",
+        "I’m Rajesh, I’m a self-taught Graphic, UI/UX Designer and Frontend developer. I'm really interested in Technology & solving technical problems",
     socialLinks: {
         twitter: "http://www.twitter.com/Raj_896",
         facebook: "https://facebook.com/rajesh.royal.92372",
@@ -16,7 +16,7 @@ module.exports = {
         youtube: "https://www.youtube.com/channel/UCp_2DqFXjVlamkWwSoiDRQw",
         devBlog: "https://dev.to/rajesh-royal"
     },
-    googleAnalyticsID: "UA-88875900-1",
+    googleAnalyticsID: "UA",
     themeColor: "#00c6ff",
     backgroundColor: "#00c6ff",
     siteRss: "/rss.xml",

@@ -24,6 +24,10 @@ figure {
   width: auto !important;
 }
 
+#nprogress {
+  position: fixed;
+  z-index: 100000;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;

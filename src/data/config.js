@@ -14,7 +14,7 @@ module.exports = {
         instagram: "https://instagram.com/rajesh.royal",
         reddit: "https://www.reddit.com/user/rajeshroyal896",
         youtube: "https://www.youtube.com/channel/UCp_2DqFXjVlamkWwSoiDRQw",
-        devBlog: "https://dev.to/rajesh-royal"
+        devBlog: "https://dev.to/rajeshroyal"
     },
     googleAnalyticsID: "UA",
     themeColor: "#00c6ff",

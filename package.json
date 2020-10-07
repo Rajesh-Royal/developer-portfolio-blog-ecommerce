@@ -9,6 +9,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "ansi-regex": "^5.0.0",
+    "axios": "^0.20.0",
     "del-cli": "^3.0.1",
     "formik": "^2.1.7",
     "gatsby": "^2.24.63",
@@ -28,8 +29,10 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^6.1.0",
-    "react-icons": "^3.11.0"
+    "react-icons": "^3.11.0",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

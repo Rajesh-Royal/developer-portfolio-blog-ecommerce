@@ -20,7 +20,7 @@ const contact = () => {
         <ThemeProvider theme={themeType == "dark" ? darkTheme : lightTheme}>
             <Layout>
                 <div className="main">
-                    <SEO title="Home" />
+                    <SEO title="Contact" />
                     <Header handleClick={handleClick} themeType={themeType} />
                     <section className="content-container"></section>
                     <Footer />

@@ -1,5 +1,5 @@
 module.exports = {
-    defaultTitle: "Smakosh",
+    defaultTitle: "Rajesh",
     logo: "https://smakosh.com/favicon/logo-48.png",
     author: "Ismail Ghallou (Smakosh)",
     url: "https://smakosh.com",
@@ -8,11 +8,13 @@ module.exports = {
         "I'm Ismail Ghallou aka Smakosh, a self-taught Graphic, UI/UX Designer and full stack developer, interested in the web, neural networks & tech in general.",
     socialLinks: {
         twitter: "http://www.twitter.com/smakosh",
+        facebook: "https://facebook.com/rajesh.royal.92372",
         github: "https://github.com/smakosh",
         linkedin: "https://www.linkedin.com/in/ismail-ghallou-630149122",
         instagram: "https://instagram.com/smakosh19",
-        youtube: "https://www.youtube.com/user/smakoshthegamer",
-        google: "https://plus.google.com/u/0/+IsmailSmakoshGhallou",
+        reddit: "https://www.reddit.com/user/rajeshroyal896",
+        youtube: "https://www.youtube.com/channel/UCp_2DqFXjVlamkWwSoiDRQw",
+        devBlog: "https://dev.to/rajesh-royal"
     },
     googleAnalyticsID: "UA-88875900-1",
     themeColor: "#00c6ff",

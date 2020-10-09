@@ -4,6 +4,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 
 import Layout from "../components/global/layouts/layout";
 import SEO from "../components/global/seo/seo";
+import ContactForm from "../components/contact/ContactForm";
 import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
 
@@ -20,9 +21,11 @@ const contact = () => {
         <ThemeProvider theme={themeType == "dark" ? darkTheme : lightTheme}>
             <Layout>
                 <div className="main">
-                    <SEO title="Home" />
+                    <SEO title="Contact" />
                     <Header handleClick={handleClick} themeType={themeType} />
-                    <section className="content-container"></section>
+                    <section className="content-container">
+                        <ContactForm />
+                    </section>
                     <Footer />
                 </div>
             </Layout>

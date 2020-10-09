@@ -1,3 +1,5 @@
+// this page is template for single blog post
+
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import { lightTheme, darkTheme } from "../theme/theme";
@@ -9,7 +11,7 @@ import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
 import SingleBlog from "./single-blog";
 
-const blog = ({ data }) => {
+const blog = ({ data, pageContext, location }) => {
   const post = data.allWordpressPost.edges[0].node;
   const [themeType, setThemeType] = useState("dark");
   const handleClick = () => {
@@ -26,7 +28,7 @@ const blog = ({ data }) => {
         <Header handleClick={handleClick} themeType={themeType} />
         <div className="main">
           <section className="content-container">
-            <SingleBlog post={post} />
+            <SingleBlog post={post} pageContext={pageContext} />
             <Footer />
           </section>
         </div>
@@ -51,9 +53,16 @@ export const query = graphql`
                 wordpress_24
             }
           }
-          featured_media {
-            localFile {
-                url
+
+          featured_media{
+          source_url
+          localFile {
+               publicURL
+               childImageSharp {
+               fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }

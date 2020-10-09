@@ -14,10 +14,11 @@ import LinkIcon from "@material-ui/icons/Link";
 
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { Container, Box, Grid, Typography } from "@material-ui/core";
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
 import config from "../../data/config";
-import RajeshImage from "../../images/rajesh-royal.jpg";
+
 
 const About = () => {
     const useStyles = makeStyles((theme) => ({
@@ -67,6 +68,19 @@ const About = () => {
         }
     }));
     const classes = useStyles();
+    const query = graphql`{
+        allImageSharp(filter: {original: {src: {regex: "/rajesh-royal-pc/"}}}) {
+          edges {
+            node {
+              id
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }`;
+    const rajeshImage = useStaticQuery(query);
     return (
         <Container maxWidth="lg">
             <Box mt={7} mb={3} width="100%">
@@ -106,7 +120,7 @@ const About = () => {
                         </Typography>
                     </Grid>
                     <Grid item lg={6} sm={12}>
-                        <img src={RajeshImage} alt="" width="100%" />
+                        <Img fluid={rajeshImage.allImageSharp.edges[0].node.fluid} />
                         <Typography variant="body1" color="initial">
                             <a href="https://instagram.com/rajesh.royal" target="_blank" referrerPolicy="norefer"
                                 className={classes.link}>

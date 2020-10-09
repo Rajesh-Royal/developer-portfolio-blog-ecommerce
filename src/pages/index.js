@@ -9,6 +9,7 @@ import Hero from "../components/Hero/hero";
 import Footer from "../components/Footer/footer";
 import Blog from "../components/blog/home-blog-section";
 import Skills from "../components/skills/skills";
+import ClientReview from "../components/reviews/ClientReview";
 
 
 const IndexPage = () => {
@@ -30,6 +31,7 @@ const IndexPage = () => {
             <Hero />
             <Blog />
             <Skills />
+            <ClientReview />
             <Footer />
           </section>
         </div>

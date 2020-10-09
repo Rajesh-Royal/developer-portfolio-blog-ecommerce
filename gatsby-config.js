@@ -35,6 +35,14 @@ module.exports = {
         icon: "src/images/gatsby-icon.png", // This path is relative to the root of the site.
       },
     },
+    "gatsby-transformer-yaml",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/data/`,
+      },
+    },
     {
       resolve: "gatsby-source-wordpress",
       options: {

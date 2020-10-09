@@ -1,0 +1,12 @@
+- name: Steven Phan
+  avatar: "./assets/testimonial/avatar-stephen-phan-1.jpg"
+  title: CEO @ <a href="https://southsvc.com/?source=rajeshroyal.com" rel="noopener noreferrer">Southland Technical Services LTD </a>
+  review: 5-stars for Rajesh. He really knows what hes doing and communicates clearly. Extremely helpful even after completion of the project. Very helpful and answers questions you may have after the project is completed and deployed. I definitely would love to use him again on future projects.
+- name: Vinika
+  avatar: "./assets/testimonial/female-avatar.jpg"
+  title: HR <a href="https://www.webomaze.com/" rel="noopener noreferrer">Webomaze Technologies</a>
+  review: Rajesh was quick in delivering the project as well as the communication.
+- name: Sebastien Nony
+  avatar: "./assets/testimonial/sabestian-nony-illustrator.jpg"
+  title: Tech VC in Africa, <a href="https://www.janngo.com/" rel="noopener noreferrer">Janngo.africa</a>
+  review: Wonderful work as usual. Rajesh masters totally WordPress, Divi, Peepso plugin, CSS and HTML. I definitely recommend him. Thanks Rajesh for this amazing work and thanks for being a cool guy :)

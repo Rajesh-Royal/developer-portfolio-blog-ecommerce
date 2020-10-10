@@ -48,14 +48,15 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "minimal-ui",
+        icon: "src/images/icon.png",
         icons: [
           {
-            src: "./icons/icon-192x192.png",
+            src: "/favicons/icon-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "./icons/icon-512x512.png",
+            src: "/favicons/icon-512x512.png", // favicon path generateon build time
             sizes: "512x512",
             type: "image/png",
           },

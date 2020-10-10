@@ -1,11 +1,11 @@
 module.exports = {
-    defaultTitle: "Rajesh",
-    logo: "https://developer-blog-ecommerce-gatsby.netlify.app/favicon/logo-48.png",
-    author: "Rajesh Royal",
+    defaultTitle: "Rajesh developer portfolio",
+    logo: "../images/icon.png",
+    author: "@Rajesh-Royal",
     url: "https://developer-blog-ecommerce-gatsby.netlify.app/",
     legalName: "Rajesh Royal",
     defaultDescription:
-        "I’m Rajesh, I’m a self-taught Graphic, UI/UX Designer and Frontend developer. I'm really interested in Technology & solving technical problems",
+        "Kick off Developer portfolio, blog, ecommerce store built with gatsby along with @material-ui, strapi, react-helmet. Hosted on netlify | Rajesh Royal",
     socialLinks: {
         twitter: "http://www.twitter.com/Raj_896",
         facebook: "https://facebook.com/rajesh.royal.92372",
@@ -17,8 +17,8 @@ module.exports = {
         devBlog: "https://dev.to/rajeshroyal"
     },
     googleAnalyticsID: "UA",
-    themeColor: "#00c6ff",
-    backgroundColor: "#00c6ff",
+    themeColor: "#2b3e50",
+    backgroundColor: "#2b3e50",
     siteRss: "/rss.xml",
     social: {
         facebook: "rajesh.royal.92372",

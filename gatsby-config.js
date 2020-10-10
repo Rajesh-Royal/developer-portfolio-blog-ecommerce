@@ -50,12 +50,12 @@ module.exports = {
         display: "minimal-ui",
         icons: [
           {
-            src: "./src/images/icon-192x192.png",
+            src: "./icons/icon-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "./src/images/icon-512x512.png",
+            src: "./icons/icon-512x512.png",
             sizes: "512x512",
             type: "image/png",
           },
@@ -69,12 +69,6 @@ module.exports = {
       options: {
         name: "images",
         path: `${__dirname}/src/data/`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-mailchimp",
-      options: {
-        endpoint: process.env.GATSBY_PORTFOLIO_MAILCHIMP,
       },
     },
     {

@@ -12,8 +12,19 @@ exports.createPages = async ({ graphql, actions }) => {
             excerpt
             slug
             date(formatString: "MM-DD-YYYY")
+            content
+            slug
             author {
               name
+            }
+            featured_media {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
             }
           }
         }

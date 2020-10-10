@@ -10,6 +10,9 @@ import Footer from "../components/Footer/footer";
 import BlogPage from "../components/blog/blog-page";
 import PostPagination from "../components/blog/pagination";
 
+import BlogPageThumbnail from "../images/blog-page.jpg";
+import config from "../data/config";
+
 const blog = (props) => {
   const [themeType, setThemeType] = useState("dark");
   const handleClick = () => {
@@ -44,7 +47,13 @@ const blog = (props) => {
   return (
     <ThemeProvider theme={themeType == "dark" ? darkTheme : lightTheme}>
       <Layout>
-        <SEO title="Blog" />
+        <SEO
+          title="Blog"
+          description={config.aboutMe}
+          image={BlogPageThumbnail}
+          slug="blog" lang="en_US"
+          type="Organization"
+        />
         <Header handleClick={handleClick} themeType={themeType} />
         <div className="main">
           <section className="content-container">

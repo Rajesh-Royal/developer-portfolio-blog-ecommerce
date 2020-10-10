@@ -8,6 +8,9 @@ import Header from "../components/Header/header";
 import About from "../components/about/about";
 import Footer from "../components/Footer/footer";
 
+import config from "../data/config";
+import AboutMePageThumbnail from "../images/rajesh-royal-pc.jpg";
+
 
 
 const about = () => {
@@ -25,7 +28,13 @@ const about = () => {
         <ThemeProvider theme={themeType == "dark" ? darkTheme : lightTheme}>
             <Layout>
                 <div className="main">
-                    <SEO title="Home" />
+                    <SEO
+                        title="About Me"
+                        description={config.aboutMe}
+                        image={AboutMePageThumbnail}
+                        slug="about" lang="en_US"
+                        type="Organization"
+                    />
                     <Header handleClick={handleClick} themeType={themeType} />
                     <section className="content-container">
                         <About />

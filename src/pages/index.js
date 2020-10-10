@@ -11,6 +11,8 @@ import Blog from "../components/blog/home-blog-section";
 import Skills from "../components/skills/skills";
 import ClientReview from "../components/reviews/ClientReview";
 
+import config from "../data/config";
+
 
 const IndexPage = () => {
   const [themeType, setThemeType] = useState("dark");
@@ -25,7 +27,7 @@ const IndexPage = () => {
     <ThemeProvider theme={themeType == "dark" ? darkTheme : lightTheme}>
       <Layout>
         <div className="main">
-          <SEO title="Home" />
+          <SEO title="Home" description={config.defaultTitle} image="" slug="" lang="en_US" type="Organization" />
           <Header handleClick={handleClick} themeType={themeType} />
           <section className="content-container">
             <Hero />

@@ -10,6 +10,7 @@ import SEO from "../components/global/seo/seo";
 import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
 import SingleBlog from "./single-blog";
+import parse from "html-react-parser";
 
 const blog = ({ data, pageContext, location }) => {
   const post = data.allWordpressPost.edges[0].node;
@@ -21,10 +22,20 @@ const blog = ({ data, pageContext, location }) => {
       setThemeType("dark");
     }
   };
+  const parsedDescription = parse(post.excerpt);
   return (
     <ThemeProvider theme={themeType == "dark" ? darkTheme : lightTheme}>
       <Layout>
-        <SEO title={post.title} />
+        <SEO
+          title={post.title}
+          description={parsedDescription[0].props.children}
+          image={post.featured_media.localFile.childImageSharp.fluid.src}
+          slug={post.slug} lang="en_US"
+          type="NewsArticle"
+          articleBody={post.content}
+          datePublished={post.date}
+          dateModified={post.date}
+        />
         <Header handleClick={handleClick} themeType={themeType} />
         <div className="main">
           <section className="content-container">
@@ -44,6 +55,7 @@ export const query = graphql`
       edges {
         node {
           title
+          excerpt
           content
           slug
           date(formatString: "LL")

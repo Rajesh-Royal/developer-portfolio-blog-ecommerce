@@ -8,7 +8,10 @@ import SEO from "../components/global/seo/seo";
 import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
 import { Box, Container, Grid, Typography } from "@material-ui/core";
+
+import config from "../data/config";
 import ThankYouImage from "../images/thankyou.gif";
+import ThankYouPageThumbnail from "../images/thank-you.jpg";
 
 const Thanks = () => {
     const [themeType, setThemeType] = useState("dark");
@@ -30,7 +33,13 @@ const Thanks = () => {
         <ThemeProvider theme={themeType == "dark" ? darkTheme : lightTheme}>
             <Layout>
                 <div className="main">
-                    <SEO title="Thank You" />
+                    <SEO
+                        title="Thank You"
+                        description={config.aboutMe}
+                        image={ThankYouPageThumbnail}
+                        slug="thanks" lang="en_US"
+                        type="Organization"
+                    />
                     <Header handleClick={handleClick} themeType={themeType} />
                     <section className="content-container">
                         <Container maxWidth="lg">

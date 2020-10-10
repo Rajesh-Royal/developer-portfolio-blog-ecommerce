@@ -26,14 +26,24 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
+        name: "Rajesh Royal",
+        short_name: "Rajesh",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
-        display: "minimal-ui",
-        icon: "src/images/gatsby-icon.png", // This path is relative to the root of the site.
+        background_color: "#2b3e50",
+        theme_color: "#2b3e50",
+        display: "standalone",
+        icon: "src/images/icon.png", // This path is relative to the root of the site.
+        theme_color_in_head: false,
+        cache_busting_mode: "none"
       },
+    },
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/icon-path*"]
+        }
+      }
     },
     "gatsby-transformer-yaml",
     {

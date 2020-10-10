@@ -68,6 +68,18 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint: process.env.GATSBY_PORTFOLIO_MAILCHIMP,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-canonical-urls",
+      options: {
+        siteUrl: config.url,
+      },
+    },
+    {
       resolve: "gatsby-source-wordpress",
       options: {
         // Specify the URL of the WordPress source

@@ -11,6 +11,7 @@
     "ansi-regex": "^5.0.0",
     "axios": "^0.20.0",
     "del-cli": "^3.0.1",
+    "dotenv": "^8.2.0",
     "formik": "^2.1.7",
     "gatsby": "^2.24.63",
     "gatsby-awesome-pagination": "^0.3.6",

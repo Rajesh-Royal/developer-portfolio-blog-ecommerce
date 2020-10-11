@@ -12,6 +12,7 @@ import Skills from "../components/skills/skills";
 import ClientReview from "../components/reviews/ClientReview";
 
 import config from "../data/config";
+import HomeThumbnail from "../images/default-opengraph-image.jpg";
 
 
 const IndexPage = () => {
@@ -27,7 +28,7 @@ const IndexPage = () => {
     <ThemeProvider theme={themeType == "dark" ? darkTheme : lightTheme}>
       <Layout>
         <div className="main">
-          <SEO title="Home" description={config.defaultTitle} image="" slug="" lang="en_US" type="Organization" />
+          <SEO title="Home" description={config.defaultDescription} image={HomeThumbnail} slug="" lang="en_US" type="Organization" />
           <Header handleClick={handleClick} themeType={themeType} />
           <section className="content-container">
             <Hero />

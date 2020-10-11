@@ -26,6 +26,7 @@ function SEO({ description, lang, meta, title, image, slug, type, articleBody, d
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
+  const ogTitle = `${title} | ${site.siteMetadata?.title}`;
   const ogImage = config.url + image || config.url + defaultImage;
   const siteUrl = `${config.url}${slug}`;
 
@@ -114,7 +115,7 @@ function SEO({ description, lang, meta, title, image, slug, type, articleBody, d
         },
         {
           property: "og:title",
-          content: title,
+          content: ogTitle,
         },
         {
           property: "og:description",

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
+import Img from "gatsby-image";
 import { Typography, Container, Box, Grid, Divider, makeStyles, Card, CardActions, CardContent, CardActionArea, CardMedia, Chip } from "@material-ui/core";
 
 const Blog = ({ data }) => {
@@ -12,6 +13,9 @@ const Blog = ({ data }) => {
             background: theme.palette.secondary.main,
             "& a": {
                 textDecoration: "none",
+            },
+            "& .gatsby-image-wrapper": {
+                width: "100% !important"
             }
         },
         chip: {
@@ -32,9 +36,17 @@ const Blog = ({ data }) => {
                 node {
                     title
                     excerpt
-                    x_featured_media_medium
                     date
                     slug
+                    featured_media{
+                      localFile{
+                        childImageSharp{
+                          fixed(height: 200) {
+                           ...GatsbyImageSharpFixed
+                          }
+                        }
+                      }
+                    }
                 }
                 }
             }
@@ -63,12 +75,12 @@ const Blog = ({ data }) => {
                                             <Link to={node.slug}>
                                                 <CardActionArea bgcolor="primary">
                                                     <CardMedia
-                                                        component="img"
-                                                        alt="Contemplative Reptile"
+                                                        component="div"
                                                         height="180"
-                                                        image={node.x_featured_media_medium}
-                                                        title="Contemplative Reptile"
-                                                    />
+                                                    >
+                                                        <Img fixed={node.featured_media.localFile.childImageSharp.fixed}
+                                                            alt="blog post thumbnail image" />
+                                                    </CardMedia>
                                                     <CardContent>
                                                         <Typography gutterBottom variant="h5" component="h4" color="textPrimary"
                                                             dangerouslySetInnerHTML={{ __html: node.title.slice(0, 55) + "..." }}>

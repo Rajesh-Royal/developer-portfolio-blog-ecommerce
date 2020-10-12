@@ -6,7 +6,8 @@ import LinkedinIcon from "@material-ui/icons/LinkedIn";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import GithubIcon from "@material-ui/icons/GitHub";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import LinkIcon from "@material-ui/icons/Link";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
 import config from "../../data/config";
 
@@ -64,12 +65,26 @@ const FooterWidgets = () => {
         }
     }));
     const classes = useStyles();
+
+    const query = graphql`{
+        allImageSharp(filter: {original: {src: {regex: "/icon-512x512/"}}}) {
+          edges {
+            node {
+              id
+              fixed(width: 100) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+        }
+      }`;
+    const logoImage = useStaticQuery(query);
     return (
         <section className={classes.root}>
             <Container maxWidth="lg">
                 <Box pb={5} pt={18} width="100%">
                     <Typography variant="body1" align="center" component="div" className={classes.container}>
-                        <img src={FooterLogo} alt="footer-logo-icon" width="100" />
+                        <Img fixed={logoImage.allImageSharp.edges[0].node.fixed} alt="footer-logo-icon" width="100" />
                         <p className="info-text">Living, learning, & leveling up <br />one day at a time.</p>
                         <div className={classes.socialLinks}>
                             <a target="_blank" href={config.socialLinks.twitter} referrerPolicy="norefer">

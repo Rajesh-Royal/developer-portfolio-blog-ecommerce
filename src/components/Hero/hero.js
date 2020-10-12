@@ -2,9 +2,9 @@ import React from "react";
 import { Container, Typography, Button, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
-import RajeshImage from "../../images/rajesh-royal-vector-illustrator.png";
 
 const Hero = () => {
     const useStyles = makeStyles((theme) => ({
@@ -21,6 +21,20 @@ const Hero = () => {
         },
     }));
     const classes = useStyles();
+
+    const query = graphql`{
+        allImageSharp(filter: {original: {src: {regex: "/rajesh-royal-vector-illustrator/"}}}) {
+          edges {
+            node {
+              id
+              fixed(width: 250) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+        }
+      }`;
+    const RajeshImage = useStaticQuery(query);
     return (
         <section className="Hero-section">
             <Container maxWidth="lg">
@@ -33,8 +47,9 @@ const Hero = () => {
                             <Typography variant="h6" color="textPrimary" align="center" className={classes.subTitle}>
                                 I design and code beautifully simple things, and I love what I do.
                             </Typography>
-                            <Typography align="center" className={classes.image}>
-                                <img width="250" src={RajeshImage} alt="Rajesh royal vector illustrator" />
+                            <Typography align="center" className={classes.image} component="div">
+                                <Img fixed={RajeshImage.allImageSharp.edges[0].node.fixed}
+                                    alt="Rajesh royal vector illustrator" />
                             </Typography>
                             <Link to="/contact" target="_blank">
                                 <Typography variant="button" color="textPrimary" align="center" className={classes.button}>

@@ -41,6 +41,7 @@ export const darkTheme = createMuiTheme({
         info: {
             // This is green.A700 as hex.
             main: "#5bc0de",
+            light: "#3c8297"
         },
         success: {
             // This is green.A700 as hex.
@@ -94,6 +95,7 @@ export const lightTheme = createMuiTheme({
         info: {
             // This is green.A700 as hex.
             main: "#5bc0de",
+            light: "#3c8297"
         },
         success: {
             // This is green.A700 as hex.

@@ -1,13 +1,15 @@
-import * as React from "react";
-import { Link } from "gatsby";
-import Img from "gatsby-image";
+import React from "react";
 import {
     Typography, Container, Box, Grid, Divider,
-    makeStyles, Card, CardActions, CardContent,
+    Card, CardActions, CardContent,
     CardActionArea, CardMedia, Chip
 } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Img from "gatsby-image";
+import { Link } from "gatsby";
 
-const BlogPage = ({ posts: postData, loading }) => {
+
+export const SingleCategory = ({ data, pageContext }) => {
 
     const useStyles = makeStyles((theme) => ({
         divider: {
@@ -25,18 +27,14 @@ const BlogPage = ({ posts: postData, loading }) => {
         },
         chip: {
             background: theme.palette.secondary.main,
-
             "& .MuiChip-root": {
                 background: theme.palette.secondary.dark,
-                color: theme.palette.text.primary,
-                cursor: "pointer",
-                "&:hover": {
-                    filter: "brightness(130%)"
-                }
+                color: theme.palette.text.primary
             }
         }
     }));
     const classes = useStyles();
+
     return (
         < section className="blog-section">
             <Container maxWidth="lg">
@@ -44,16 +42,15 @@ const BlogPage = ({ posts: postData, loading }) => {
                     <Grid spacing={3} container>
                         <Grid component="div" item sm={12}>
                             <Typography variant="h4" color="textPrimary" align="center">
-                                Blog
-                                </Typography>
+                                {pageContext.name}
+                            </Typography>
                             <Divider variant="middle" className={classes.divider} />
                         </Grid>
                     </Grid>
                 </Box>
-                {/* ToDo: Use wordpress api to fetch blog dynamically */}
                 <Box my={4}>
                     <Grid spacing={3} container>
-                        {postData.map(({ node }, index) => (
+                        {data.allWordpressPost.edges.map(({ node }, index) => (
                             <Grid item xs={12} sm={6} lg={4} key={index}>
                                 <Card className={classes.card}>
                                     <Link to={`/${node.slug}`}>
@@ -67,20 +64,15 @@ const BlogPage = ({ posts: postData, loading }) => {
                                             </CardMedia>
                                             <CardContent>
                                                 <Typography gutterBottom variant="h5" component="h4" color="textPrimary"
-                                                    dangerouslySetInnerHTML={{ __html: node.title.slice(0, 55) + "..." }} />
+                                                    dangerouslySetInnerHTML={{ __html: node.title.slice(0, 55) + "..." }}>
+
+                                                </Typography>
                                                 <Typography variant="body2" color="textPrimary" component="p"
-                                                    dangerouslySetInnerHTML={{ __html: node.excerpt.slice(0, 140) }} />
+                                                    dangerouslySetInnerHTML={{ __html: node.excerpt.slice(0, 140) }}>
+                                                </Typography>
                                             </CardContent>
                                         </CardActionArea>
                                     </Link>
-                                    <CardActions className={classes.chip}>
-                                        {
-                                            node.categories.map((item, index) => {
-                                                return <Link to={`/${item.slug}`} key={index}><Chip size="medium" label={item.name} /></Link>;
-                                            })
-                                        }
-
-                                    </CardActions>
                                 </Card>
                             </Grid>
                         ))}
@@ -90,20 +82,4 @@ const BlogPage = ({ posts: postData, loading }) => {
         </section>
     );
 };
-
-
-// export const query = graphql`
-// query BlogPageQuery2 {
-//     allWordpressPost{
-//         edges {
-//         node {
-//             title
-//             excerpt
-//             x_featured_media_medium
-//             date
-//             slug
-//         }
-//         }
-//     }
-// }`;
-export default BlogPage;
+export default SingleCategory;

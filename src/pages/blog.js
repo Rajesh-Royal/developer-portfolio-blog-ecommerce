@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { lightTheme, darkTheme } from "../theme/theme";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { Container, Box } from "@material-ui/core";
+import Img from "gatsby-image";
 
 import Layout from "../components/global/layouts/layout";
 import SEO from "../components/global/seo/seo";
@@ -88,6 +89,19 @@ export const postPageQuery = graphql`
             x_featured_media_medium
             date
             slug
+            categories{
+              name
+              slug
+            }
+            featured_media{
+            localFile{
+              childImageSharp{
+                fixed(height: 200) {
+                 ...GatsbyImageSharpFixed
+                }
+              }
+            }
+          }
         }
         }
     }

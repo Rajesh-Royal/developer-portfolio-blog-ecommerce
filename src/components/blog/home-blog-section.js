@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
-import Img from "gatsby-image";
 import { Typography, Container, Box, Grid, Divider, makeStyles, Card, CardActions, CardContent, CardActionArea, CardMedia, Chip } from "@material-ui/core";
+import Img from "gatsby-image";
 
 const Blog = ({ data }) => {
     const useStyles = makeStyles((theme) => ({
@@ -22,7 +22,11 @@ const Blog = ({ data }) => {
             background: theme.palette.secondary.main,
             "& .MuiChip-root": {
                 background: theme.palette.secondary.dark,
-                color: theme.palette.text.primary
+                color: theme.palette.text.primary,
+                cursor: "pointer",
+                "&:hover": {
+                    filter: "brightness(130%)"
+                }
             }
         }
     }));
@@ -38,6 +42,10 @@ const Blog = ({ data }) => {
                     excerpt
                     date
                     slug
+                    categories{
+                        name
+                        slug
+                    }
                     featured_media{
                       localFile{
                         childImageSharp{
@@ -93,8 +101,11 @@ const Blog = ({ data }) => {
                                                 </CardActionArea>
                                             </Link>
                                             <CardActions className={classes.chip}>
-                                                <Chip size="small" label="First" />
-                                                <Chip size="small" label="Second" />
+                                                {
+                                                    node.categories.map((item, index) => {
+                                                        return <Link to={`/${item.slug}`} key={index}><Chip size="medium" label={item.name} /></Link>;
+                                                    })
+                                                }
                                             </CardActions>
                                         </Card>
                                     </Grid>

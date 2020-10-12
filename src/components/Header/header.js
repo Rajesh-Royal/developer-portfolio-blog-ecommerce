@@ -83,7 +83,7 @@ const Header = (props) => {
                             <Link to="/blog">Blog</Link>
                             <Link to="/about">About</Link>
                             <Link to="/contact">Contact</Link>
-                            <Link to="/">Resume</Link>
+                            <a href="https://rajeshroyal.com/wp-content/uploads/2020/03/Rajesh-Royal-Google-Intern-Novore.pdf" target="_blank">Resume</a>
                         </Typography>
                         <IconButton aria-label="light/dark theme switch" color="default" onClick={() => window.open("https://github.com/Rajesh-Royal", "_blank")}>
                             <GitHubIcon />

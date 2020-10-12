@@ -2,11 +2,10 @@ import React from "react";
 import { Container, Box, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import parse from "html-react-parser";
-import { PostImage } from "../components/WP-image-optimize/PostImage";
+import { PostImage } from "../../components/WP-image-optimize/PostImage";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
 
-import "./templates.module.css";
 
 export const SingleBlog = ({ post, pageContext }) => {
     const useStyles = makeStyles((theme) => ({

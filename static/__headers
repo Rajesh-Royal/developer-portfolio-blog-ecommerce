@@ -1,0 +1,42 @@
+Content-Security-Policy: default-src ‘self’ ‘unsafe-inline’ ‘unsafe-eval’ https: data:
+X-Frame-Options: *ALLOW-FROM https://gatsby-personal-website.netlify.app/*
+X-XSS-Protection: 1; mode=block
+Referrer-Policy: strict-origin-when-cross-origin
+Expect-CT: max-age=0
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=604800; includeSubDomains; preload
+Feature-Policy: accelerometer ‘none’; camera ‘none’; geolocation ‘none’; gyroscope ‘none’; magnetometer ‘none’; microphone ‘none’; payment ‘none’; usb ‘none’
+
+/img/*
+Cache-Control: public, max-age=604800, immutable
+
+/*.pdf
+Cache-Control: public, max-age=604800, immutable
+
+/*.ico
+Cache-Control: public, max-age=604800, immutable
+
+/*.flv
+Cache-Control: public, max-age=604800, immutable
+
+/*.jpg
+Cache-Control: public, max-age=604800, immutable
+
+/*.jpeg
+Cache-Control: public, max-age=604800, immutable
+
+/*.png
+Cache-Control: public, max-age=604800, immutable
+
+/*.css
+Cache-Control: public, max-age=604800, immutable
+
+/*.js
+Cache-Control: public, max-age=604800, immutable
+
+/*sw.js
+Cache-Control: public, max-age=604800, immutable
+
+/*.html
+Cache-Control: public, max-age=0, must-revalidate

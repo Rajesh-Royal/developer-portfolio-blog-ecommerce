@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import { lightTheme, darkTheme } from "../theme/theme";
+import { lightTheme, darkTheme } from "../../theme/theme";
 import { ThemeProvider } from "@material-ui/core/styles";
 
-import Layout from "../components/global/layouts/layout";
-import SEO from "../components/global/seo/seo";
-import Header from "../components/Header/header";
-import Footer from "../components/Footer/footer";
+import Layout from "../../components/global/layouts/layout";
+import SEO from "../../components/global/seo/seo";
+import Header from "../../components/Header/header";
+import Footer from "../../components/Footer/footer";
 import SingleBlog from "./single-blog";
 import parse from "html-react-parser";
 

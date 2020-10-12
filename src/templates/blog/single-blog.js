@@ -5,7 +5,7 @@ import parse from "html-react-parser";
 import { PostImage } from "../../components/WP-image-optimize/PostImage";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
-
+import SocialShare from "./social-share";
 
 export const SingleBlog = ({ post, pageContext }) => {
     const useStyles = makeStyles((theme) => ({
@@ -71,7 +71,7 @@ export const SingleBlog = ({ post, pageContext }) => {
         navigation: {
             display: "flex",
             justifyContent: "space-between",
-            marginTop: theme.spacing(8),
+            marginTop: theme.spacing(4),
             fontSize: 20,
             "& a": {
                 color: theme.palette.info.main,
@@ -129,6 +129,9 @@ export const SingleBlog = ({ post, pageContext }) => {
                                 {/* optimizing all the images inside post body with gatsby transformer */}
                                 {parse(post.content, { replace: replaceMedia })}
                             </Typography>
+
+                            <SocialShare title={post.title} path={post.slug} />
+
                             <Typography variant="body2" component="p" className={classes.navigation} align="right">
                                 {pageContext.prev ?
                                     <Link to={`/${pageContext.prev.slug}`}> {"<"} PrevPost </Link> : ""

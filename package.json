@@ -41,6 +41,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
     "react-material-ui-carousel": "^2.0.1",
+    "react-share": "^4.3.1",
     "yup": "^0.29.3"
   },
   "devDependencies": {

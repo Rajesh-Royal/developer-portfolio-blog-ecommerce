@@ -188,5 +188,15 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-google-fonts",
+      options: {
+        fonts: [
+          "Roboto\:300,400,500,600",
+          "Material Icons",
+        ],
+        display: "swap"
+      }
+    }
   ],
 };

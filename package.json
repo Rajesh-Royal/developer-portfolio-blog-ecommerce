@@ -19,6 +19,7 @@
     "gatsby-plugin-canonical-urls": "^2.3.13",
     "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-feed": "^2.5.14",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-manifest": "^2.4.34",
     "gatsby-plugin-material-ui": "^2.1.10",

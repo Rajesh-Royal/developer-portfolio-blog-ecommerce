@@ -12,11 +12,11 @@ Kick-off Developer portfolio, blog, eCommerce store built with Gatsby along with
 </p>
 
 <p align="center">
-	<a href="https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/"><img src="https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/tree/develop/src/images/directory size.png" height="30"/></a>
-    <a href="https://twitter.com/intent/tweet?text=Kick-off Developer portfolio, blog, eCommerce store built with Gatsby along with @material-ui, Strapi, react-helmet. Hosted on Netlify&url=https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce&hashtags=javascript,opensource,netlify, gatsby, portfolio, material-ui, formik,webdev,developers"><img src="https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/tree/develop/src/images/tweetShield.svg" alt="Tweet" height="30"/></a>
+	<a href="https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/"><img src="https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/blob/develop/src/images/directory%20size.png" height="30"/></a>
+    <a href="https://twitter.com/intent/tweet?text=Kick-off Developer portfolio, blog, eCommerce store built with Gatsby along with @material-ui, Strapi, react-helmet. Hosted on Netlify&url=https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce&hashtags=javascript,opensource,netlify, gatsby, portfolio, material-ui, formik,webdev,developers"><img src="https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/blob/develop/src/images/tweetShield.svg" alt="Tweet" height="30"/></a>
 </p><br/><br/>
 
-<p align="center"><a href="https://developer-blog-ecommerce-gatsby.netlify.app/"><img src="https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/tree/develop/src/images/final%20screenshot%20readme%20preview.jpg" width="100%"/></a><a href="#nastyox"></a></p><br/>
+<p align="center"><a href="https://developer-blog-ecommerce-gatsby.netlify.app/"><img src="https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/blob/develop/src/images/final%20screenshot%20readme%20preview.jpg" width="100%"/></a><a href="#nastyox"></a></p><br/>
 
 _Have another more specific idea? You may Create a feature request [Request a feature](https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/issues/new?assignees=Rajesh-Royal&labels=enhancement&template=feature_request.md&title=)._
 

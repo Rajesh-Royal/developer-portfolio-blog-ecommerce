@@ -68,6 +68,12 @@ A quick look at the top-level files and directories you'll see in a this project
     ├── .github/ISSUE_TEMPLATES
     ├── node_modules
     ├── src
+        ├── data
+            ├── assets
+            ├── data.config
+            ├── skills.yaml
+            ├── testimonial.yaml
+            ├── projectWork.yaml
     ├── static
     ├── .gitignore
     ├── .prettierrc

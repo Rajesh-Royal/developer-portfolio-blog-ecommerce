@@ -7,9 +7,14 @@
 <h1 align="center">
   Developer portfolio with Blog & eCommerce Store
 </h1>
-
+<p align="center">
 Kick-off Developer portfolio, blog, eCommerce store built with Gatsby along with @material-ui, Strapi, react-helmet. Hosted on Netlify
+</p>
 
+<p align="center">
+	<a href="https://github.com/nastyox/Rando.js#nastyox"><img src="https://github.com/Rajesh-Royal/netflix-frontend-clone/blob/master/images/directory%20size.png" height="30"/></a>
+    <a href="https://twitter.com/intent/tweet?text=Video streaming website Netflix Frontend clone. Frontend - HTML5, CSS3, JS.&url=https://github.com/Rajesh-Royal/netflix-frontend-clone&hashtags=javascript,opensource,js,webdev,developers"><img src="http://randojs.com/images/tweetShield.svg" alt="Tweet" height="30"/></a>
+</p><br/><br/>
 _Have another more specific idea? You may Create a feature request [Request a feature](https://github.com/Rajesh-Royal/developer-portfolio-blog-ecommerce/issues/new?assignees=Rajesh-Royal&labels=enhancement&template=feature_request.md&title=)._
 
 ## ⚠ you should use develop branch for latest codebase.

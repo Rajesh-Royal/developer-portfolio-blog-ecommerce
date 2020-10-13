@@ -9,6 +9,7 @@ import Hero from "../components/Hero/hero";
 import Footer from "../components/Footer/footer";
 import Blog from "../components/blog/home-blog-section";
 import Skills from "../components/skills/skills";
+import Work from "../components/work/work";
 import ClientReview from "../components/reviews/ClientReview";
 
 import config from "../data/config";
@@ -33,6 +34,7 @@ const IndexPage = () => {
           <section className="content-container">
             <Hero />
             <Blog />
+            <Work />
             <Skills />
             <ClientReview />
             <Footer />

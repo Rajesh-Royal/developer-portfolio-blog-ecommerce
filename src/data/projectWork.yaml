@@ -1,0 +1,12 @@
+- thumbnail: "./assets/project/vanilacodes.png"
+  title: Vanilacodes Agency Website
+  excerpt: Agency website for Vanilacodes company with contact, live chat, SEO and speed optimized, security, High conversion home page. Hosted on AWS with WordPress CMS.
+  slug: https://vanilacodes.com/
+- thumbnail: "./assets/project/chatungariver-vacation-esotrickey-2.jpg"
+  title: YACHT RENTALS, River Vacation
+  excerpt: website for their YACHT and boat rental business with online payment and booking system. Used Elementor, OceanWP, Stripe and PayPal Express.
+  slug: https://www.esotericvacation.com/
+- thumbnail: "./assets/project/homeopathic-services-main-image-1.jpg"
+  title: Website Redesign and SEO Optimization
+  excerpt: Redesign the website structure to match with homeopathy and reduce the bounce rate, Optimize the speed and content of the website for SEO and conversion
+  slug: https://homeopathicservices.com/

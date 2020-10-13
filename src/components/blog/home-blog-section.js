@@ -64,7 +64,7 @@ const Blog = ({ data }) => {
 
                 < section className="blog-section">
                     <Container maxWidth="lg">
-                        <Box mt={8}>
+                        <Box mt={12}>
                             <Grid spacing={3} container>
                                 <Grid component="div" item sm={12}>
                                     <Typography variant="h4" color="textPrimary" align="center">

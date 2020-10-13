@@ -1,0 +1,44 @@
+- name: Frontend
+  skills:
+    - HTML5
+    - CSS3
+    - ES6
+    - StoryBook
+    - ReactStrap
+    - JQuery
+    - React.js
+    - Socket.io
+    - TypeScript
+- name: Tools
+  skills:
+    - VsCode
+    - Webstorm
+    - AdobeXD
+    - Photoshop
+    - Git
+    - Postman
+- name: Data Processing
+  skills:
+    - GraphQL
+    - REST API
+    - Apollo Provider
+    - MongoDB
+    - MySQL
+- name: CMS & Frameworks
+  skills:
+    - WordPress
+    - Strapi
+    - Bootstrap
+    - "@material-ui"
+- name: Cloud & CI/CD
+  skills:
+    - AWS
+    - Netlify
+    - Vercal
+    - Surge.sh
+- name: Backend
+  skills:
+    - Node.js
+    - PHP
+    - "@nestJS"
+    - Express.js

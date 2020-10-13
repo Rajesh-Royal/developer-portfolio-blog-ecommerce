@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Typography, Container, Box, Grid, Divider, makeStyles, Card, CardActions, Chip } from "@material-ui/core";
+import { graphql, useStaticQuery } from "gatsby";
 
 const Skills = () => {
     const useStyles = makeStyles((theme) => ({
@@ -13,13 +14,14 @@ const Skills = () => {
             paddingRight: theme.spacing(1),
             paddingTop: theme.spacing(1),
             paddingBottom: theme.spacing(1),
+            height: "100%",
             "& a": {
                 textDecoration: "none",
             }
         },
         label: {
             paddingLeft: theme.spacing(1),
-            color: theme.palette.primary.main
+            opacity: 0.6
         },
         chip: {
             background: theme.palette.secondary.main,
@@ -34,11 +36,23 @@ const Skills = () => {
         }
     }));
     const classes = useStyles();
+    const data = useStaticQuery(graphql`
+     query allSkills{
+        allSkillsYaml {
+          edges {
+           node {
+               name
+               skills
+           }
+          }
+        }
+      }
+    `);
     return (
 
         < section className="blog-section">
             <Container maxWidth="lg">
-                <Box mt={8}>
+                <Box mt={12}>
                     <Grid spacing={3} container>
                         <Grid component="div" item sm={12}>
                             <Typography variant="h4" color="textPrimary" align="center">
@@ -51,92 +65,27 @@ const Skills = () => {
                 {/* ToDo: Optimize code with seprate data file if possible */}
                 <Box my={4}>
                     <Grid spacing={3} container>
-                        <Grid item xs={12} sm={6} lg={4}>
-                            <Card className={classes.card}>
-                                <Typography variant="h6" color="textPrimary" component="p" className={classes.label}>
-                                    Frontend:
-                                </Typography>
-                                <CardActions className={classes.chip}>
-                                    <Chip label="HTML5" />
-                                    <Chip label="CSS3" />
-                                    <Chip label="ES6" />
-                                    <Chip label="JQuery" />
-                                    <Chip label="React JS" />
-                                    <Chip label="Reactstrap" />
-                                    <Chip label="Socket.IO" />
-                                    <Chip label="TypeScript" />
-                                    <Chip label="Storybook" />
-                                </CardActions>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={12} sm={6} lg={4}>
-                            <Card className={classes.card}>
-                                <Typography variant="h6" color="textPrimary" component="p" className={classes.label}>
-                                    Tools:
-                                </Typography>
-                                <CardActions className={classes.chip}>
-                                    <Chip label="VSCode" />
-                                    <Chip label="WebStorm" />
-                                    <Chip label="AdobeXD" />
-                                    <Chip label="PS" />
-                                    <Chip label="Git" />
-                                    <Chip label="PostMan" />
-                                </CardActions>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={12} sm={6} lg={4}>
-                            <Card className={classes.card}>
-                                <Typography variant="h6" color="textPrimary" component="p" className={classes.label}>
-                                    Data Processing:
-                                </Typography>
-                                <CardActions className={classes.chip}>
-                                    <Chip label="GraphQL" />
-                                    <Chip label="Rest API" />
-                                    <Chip label="Apollo Provider" />
-                                    <Chip label="MongoDB" />
-                                    <Chip label="MySQL" />
-                                </CardActions>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={12} sm={6} lg={4}>
-                            <Card className={classes.card}>
-                                <Typography variant="h6" color="textPrimary" component="p" className={classes.label}>
-                                    CMS & Frameworks:
-                                </Typography>
-                                <CardActions className={classes.chip}>
-                                    <Chip label="WordPress" />
-                                    <Chip label="Strapi" />
-                                    <Chip label="Bootstrap" />
-                                    <Chip label="@Material-UI" />
-                                </CardActions>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={12} sm={6} lg={4}>
-                            <Card className={classes.card}>
-                                <Typography variant="h6" color="textPrimary" component="p" className={classes.label}>
-                                    Cloud & CI/CD:
-                                </Typography>
-                                <CardActions className={classes.chip}>
-                                    <Chip label="AWS" />
-                                    <Chip label="Netlify" />
-                                    <Chip label="Surge" />
-                                    <Chip label="Vercel" />
-                                </CardActions>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={12} sm={6} lg={4}>
-                            <Card className={classes.card}>
-                                <Typography variant="h6" color="textPrimary" component="p" className={classes.label}>
-                                    Backend:
-                                </Typography>
-                                <CardActions className={classes.chip}>
-                                    <Chip label="Node.js" />
-                                    <Chip label="PHP" />
-                                    <Chip label="@NestJS" />
-                                    <Chip label="Express.js" />
-                                </CardActions>
-                            </Card>
-                        </Grid>
+                        {
+                            data.allSkillsYaml.edges.map((node, index) => {
+                                return (
+                                    <Grid item xs={12} sm={6} lg={4} key={index}>
+                                        <Card className={classes.card}>
+                                            <Typography variant="h6" color="inherit" component="p" className={classes.label}>
+                                                {node.node.name}:
+                                            </Typography>
+                                            <CardActions className={classes.chip}>
+                                                {
+                                                    node.node.skills.map((item, index) => {
+                                                        return <Chip label={item} key={index} />;
+                                                    })
+                                                }
+
+                                            </CardActions>
+                                        </Card>
+                                    </Grid>
+                                );
+                            })
+                        }
                     </Grid>
                 </Box>
             </Container>

@@ -62,6 +62,7 @@ const Skills = () => {
                                     <Chip label="ES6" />
                                     <Chip label="JQuery" />
                                     <Chip label="React JS" />
+                                    <Chip label="Reactstrap" />
                                     <Chip label="Socket.IO" />
                                     <Chip label="TypeScript" />
                                     <Chip label="Storybook" />
@@ -106,7 +107,6 @@ const Skills = () => {
                                     <Chip label="WordPress" />
                                     <Chip label="Strapi" />
                                     <Chip label="Bootstrap" />
-                                    <Chip label="Reactstrap" />
                                     <Chip label="@Material-UI" />
                                 </CardActions>
                             </Card>

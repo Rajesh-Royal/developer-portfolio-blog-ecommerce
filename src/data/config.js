@@ -34,7 +34,7 @@ module.exports = {
         zipCode: "305002",
     },
     contact: {
-        email: "rajeshroyal896@.com",
+        email: "rajeshroyal896@gmail.com",
         phone: "+91 9521021925",
     },
     foundingDate: "10/10/2020",
